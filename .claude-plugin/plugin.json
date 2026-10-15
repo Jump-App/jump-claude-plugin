@@ -1,0 +1,19 @@
+{
+  "name": "jump",
+  "displayName": "Jump for Financial Advisors",
+  "version": "1.0.0",
+  "description": "Meeting and follow-up skills for financial advisors, built on Jump's read-only connector: client commitments, decision log, last meeting recap, client meeting history, week in review, yesterday's meetings, recap email drafts and document lookup. Requires the Jump connector. Full meeting transcripts are not available through it, and nothing is written back to Jump. For financial professional use only; not investment, legal, or tax advice.",
+  "author": {
+    "name": "Jump",
+    "url": "https://jumpapp.com"
+  },
+  "homepage": "https://jumpapp.com",
+  "keywords": [
+    "financial-advisor",
+    "wealth-management",
+    "meetings",
+    "follow-up",
+    "jump"
+  ],
+  "mcpServers": "./.mcp.json"
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "jump": {
+      "type": "http",
+      "url": "https://my.jumpapp.com/mcp"
+    }
+  }
+}
