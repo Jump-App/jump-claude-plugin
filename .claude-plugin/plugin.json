@@ -8,6 +8,8 @@
     "url": "https://jumpapp.com"
   },
   "homepage": "https://jumpapp.com",
+  "privacyPolicyUrl": "https://jump.ai/privacy-policy",
+  "license": "MIT",
   "keywords": [
     "financial-advisor",
     "wealth-management",
