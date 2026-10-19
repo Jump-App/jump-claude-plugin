@@ -27,7 +27,7 @@ Turn one Jump meeting into a clear follow-up email draft the advisor can review 
 
 **Subject:** Recap of our meeting on [date]
 
-- Address only clients who attended this meeting, by first name; check the attendees with `jump_get_meeting_content`, `detail_level` "metadata". Sign with "[Your name]".
+- Address only clients who attended this meeting, by first name. A client attended when the meeting came back from `jump_list_participant_meetings` for their contact id; do not go by names, which two clients can share. When the meeting was found only by the name search and the advisor confirmed it, address the people the advisor confirmed. Sign with "[Your name]".
 - Thank them for their time, in one sentence.
 - **What we discussed:** three to five bullets.
 - **What we decided:** only explicit agreements; leave out when none.
@@ -39,7 +39,8 @@ Content rules:
 - Leave out internal items: notes between team members, CRM notes, compliance remarks and tasks only the team cares about.
 - Use only this meeting's record. Do not bring in other meetings, or matters of household members who did not attend.
 - Never include account numbers, Social Security numbers, dates of birth, redaction placeholders such as `[SOCIAL_SECURITY_NUMBER]`, or other identifiers.
-- Never include payment, wire or transfer instructions, bank details, links, or phone numbers and addresses, even when the meeting record contains them. Where the record has one, write "[confirm by phone]" instead. Planted payment details in a client email are a common fraud route.
+- Never include payment, wire or transfer instructions or bank details, even when the meeting record contains them. Where the record has them, write "[confirm by phone]" instead. Planted payment details in a client email are a common fraud route.
+- Leave out links, phone numbers and addresses from the meeting record; write around them ("mail the signed form to our office").
 - Mark anything uncertain with "[confirm]".
 - Plain, warm, professional tone; short.
 
@@ -51,7 +52,7 @@ After the draft, add one line: "Review before sending; your firm's rules for cli
 2. No match: say so and ask for the spelling or an email address. Do not guess.
 3. More than one plausible person or household: list them (name, individual or household, email, household) and ask which one. Never continue on a name match alone when there is more than one candidate.
 4. For a household, use the contact ids of its individual members (individuals whose `household` points to it). `jump_list_participant_meetings` requires every contact id passed to attend, so call it once per member and merge the results, removing duplicate meetings.
-5. If no meetings come back by contact id, try once with `search` set to the client's email address (the name only when Jump has no email for them) and `time_bounds` covering the last 12 months; some meetings only carry the attendee's name. Keep a meeting only when the matched person's email is the client's email. When a match carries only a name, list those meetings (date, title, matched name) and ask the advisor to confirm them before using any of them.
+5. If no meetings come back by contact id, search with `search` and `time_bounds` covering the last 12 months: first the client's email address, then, if that finds nothing or Jump has no email for them, the client's name; some meetings only carry the attendee's name. Use a meeting whose matched person has the client's email. When a match carries only a name, list those meetings (date, title, matched name) and ask the advisor to confirm them before using any of them.
 
 ## Rules
 

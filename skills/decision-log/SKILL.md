@@ -46,7 +46,7 @@ If nothing was decided, say so and list what was discussed: "I found no decision
 2. No match: say so and ask for the spelling or an email address. Do not guess.
 3. More than one plausible person or household: list them (name, individual or household, email, household) and ask which one. Never continue on a name match alone when there is more than one candidate.
 4. For a household, use the contact ids of its individual members (individuals whose `household` points to it). `jump_list_participant_meetings` requires every contact id passed to attend, so call it once per member and merge the results, removing duplicate meetings.
-5. If no meetings come back by contact id, try once with `search` set to the client's email address (the name only when Jump has no email for them) and `time_bounds` covering the last 12 months; some meetings only carry the attendee's name. Keep a meeting only when the matched person's email is the client's email. When a match carries only a name, list those meetings (date, title, matched name) and ask the advisor to confirm them before using any of them.
+5. If no meetings come back by contact id, search with `search` and `time_bounds` covering the last 12 months: first the client's email address, then, if that finds nothing or Jump has no email for them, the client's name; some meetings only carry the attendee's name. Use a meeting whose matched person has the client's email. When a match carries only a name, list those meetings (date, title, matched name) and ask the advisor to confirm them before using any of them.
 
 ## Rules
 
