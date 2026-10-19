@@ -25,10 +25,10 @@ fail() {
   failures=$((failures + 1))
 }
 
-python3 -m json.tool .claude-plugin/plugin.json >/dev/null || fail ".claude-plugin/plugin.json is not valid JSON"
-python3 -m json.tool .mcp.json >/dev/null || fail ".mcp.json is not valid JSON"
+python3 -I -m json.tool .claude-plugin/plugin.json >/dev/null || fail ".claude-plugin/plugin.json is not valid JSON"
+python3 -I -m json.tool .mcp.json >/dev/null || fail ".mcp.json is not valid JSON"
 
-mcp_url="$(python3 -c 'import json; print(json.load(open(".mcp.json"))["mcpServers"]["jump"]["url"])')"
+mcp_url="$(python3 -I -c 'import json; print(json.load(open(".mcp.json"))["mcpServers"]["jump"]["url"])')"
 [[ "$mcp_url" == "$prod_url" ]] || fail ".mcp.json points to $mcp_url instead of $prod_url"
 
 shopt -s nullglob
