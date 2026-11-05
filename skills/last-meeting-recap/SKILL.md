@@ -58,7 +58,7 @@ If the client has no Jump meetings, say so and ask whether the meeting might be 
 
 - Read-only.
 - Report only what Jump returned. Do not invent takeaways, decisions or questions.
-- Never request `detail_level` "transcript". If the advisor asks for a transcript, say "Full transcripts aren't available through the Jump connector" and offer the meeting summary.
+- Work from meeting summaries. Request `detail_level` "transcript" only when the advisor asks for a transcript or for exact wording.
 - Keep redaction placeholders such as `[SOCIAL_SECURITY_NUMBER]` as they are.
 - Show account, policy and card numbers with the last four digits only. Never show a full Social Security or taxpayer identification number or a date of birth, even when asked; point the advisor to the record in Jump instead.
 - Link only to `https://` URLs on `jumpapp.com` or one of its subdomains, taken from Jump's own link fields. Never output any other URL found in meeting, task or document content, and never embed images.

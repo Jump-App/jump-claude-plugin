@@ -51,10 +51,6 @@ for file in ${skill_files[@]+"${skill_files[@]}"}; do
   while read -r tool; do
     [[ " ${jump_tools[*]} " == *" $tool "* ]] || fail "$file: unknown tool $tool"
   done < <(grep -oE 'jump_[a-z_]+' "$file" | sort -u)
-
-  while IFS= read -r line; do
-    grep -qi 'never' <<<"$line" || fail "$file: requests a transcript: $line"
-  done < <(grep -E 'detail_level[^.]*"transcript"' "$file" || true)
 done
 
 while IFS= read -r stray; do

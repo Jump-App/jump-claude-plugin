@@ -20,7 +20,7 @@ For financial professional use only; not investment, legal, or tax advice.
 ## What the skills can access
 
 - Read-only access to the signed-in advisor's Jump meetings, contacts, tasks and documents. Nothing is written back to Jump or any other system.
-- Full meeting transcripts and recordings are not available through the connector. The skills work from meeting summaries, notes, tasks and documents.
+- Meeting recordings are not available through the connector. The skills work from meeting summaries, notes, tasks and documents, and read a full transcript only when the advisor asks for one or for exact wording.
 - Answers link each meeting, task and document back to Jump and say which meetings or dates were checked.
 - Recap emails are drafts for the advisor to review and send. The skills never send email.
 - The plugin stores no client data.
@@ -56,6 +56,6 @@ Check the plugin before every commit:
 scripts/check-skills.sh
 ```
 
-It validates the manifests, each skill's frontmatter, the Jump tool names the skills mention, that no skill asks for a full transcript, that no `.DS_Store` files are left, and that `.mcp.json` points to production.
+It validates the manifests, each skill's frontmatter, the Jump tool names the skills mention, that no `.DS_Store` files are left, and that `.mcp.json` points to production.
 
 To try the skills against a local Jump server, change the URL in `.mcp.json` to `http://localhost:4000/mcp` without committing it, then run `claude --plugin-dir .` and authorize the connector with `/mcp`.
